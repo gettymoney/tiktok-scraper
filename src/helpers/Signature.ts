@@ -1,4 +1,4 @@
-import Signer from 'tiktok-signature';
+import Signer from '@gettymoney/tiktok-signature';
 
 export async function sign(url: string) {
     const signer = new Signer();
