@@ -1,13 +1,18 @@
-import { getUserProfileInfo } from '../src';
+const { getUserProfileInfo } = require('../build');
 
 (async () => {
     try {
-        const userMeta = await getUserProfileInfo('tiktok', {});
+        console.time('get user profile');
+        const userMeta = await getUserProfileInfo('tiktok', {
+            proxy: '127.0.0.1:7890',
+        });
         console.log(userMeta);
+        console.timeEnd('get user profile');
     } catch (error) {
         console.log(error);
     }
 })();
+
 
 /**
  * Output example
